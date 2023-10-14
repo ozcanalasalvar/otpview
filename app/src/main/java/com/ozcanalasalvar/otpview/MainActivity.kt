@@ -33,7 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ozcanalasalvar.otpview.ui.theme.Orange
 import com.ozcanalasalvar.otpview.ui.theme.OtpviewTheme
-import com.ozcanalasalvar.pinview.compose.OtpView
+//import com.ozcanalasalvar.otpview.compose.OtpView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,67 +48,67 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
 
-                    Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .background(Color.White)
-                            .verticalScroll(rememberScrollState())
-                            .background(Orange),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                    ) {
-                        var otpText by remember {
-                            mutableStateOf("")
-                        }
-                        Spacer(modifier = Modifier.height(30.dp))
-
-                        Text(
-                            text = "Enter Verification Code",
-                            fontSize = 22.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = Color.White
-                        )
-                        Spacer(modifier = Modifier.height(170.dp))
-                        Text(
-                            text = "We have sent OTP on your number",
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight.Normal,
-                            color = Color.White
-                        )
-
-                        Spacer(modifier = Modifier.height(30.dp))
-
-                        OtpView(
-                            value = otpText,
-                            digits = 6,
-                            textColor = Orange,
-                            passiveColor = Color.White.copy(alpha = 0.8f),
-                            fontSize = 25.sp,
-                            onFocusChanged = { focused ->
-                                Log.i("focues = ", "$focused")
-                            },
-                            onTextChange = { value, completed ->
-                                otpText = value
-                            },
-                        )
-
-                        Spacer(modifier = Modifier.height(180.dp))
-
-                        Text(
-                            text = buildAnnotatedString {
-                                append("Didn't receive a Otp?")
-                                withStyle(
-                                    style = SpanStyle(
-                                        textDecoration = TextDecoration.Underline,
-                                    )
-                                ) {
-                                    append("Resend Otp")
-                                }
-                            },
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight.Normal,
-                            color = Color.White
-                        )
-                    }
+//                    Column(
+//                        modifier = Modifier
+//                            .fillMaxSize()
+//                            .background(Color.White)
+//                            .verticalScroll(rememberScrollState())
+//                            .background(Orange),
+//                        horizontalAlignment = Alignment.CenterHorizontally,
+//                    ) {
+//                        var otpText by remember {
+//                            mutableStateOf("")
+//                        }
+//                        Spacer(modifier = Modifier.height(30.dp))
+//
+//                        Text(
+//                            text = "Enter Verification Code",
+//                            fontSize = 22.sp,
+//                            fontWeight = FontWeight.Bold,
+//                            color = Color.White
+//                        )
+//                        Spacer(modifier = Modifier.height(170.dp))
+//                        Text(
+//                            text = "We have sent OTP on your number",
+//                            fontSize = 16.sp,
+//                            fontWeight = FontWeight.Normal,
+//                            color = Color.White
+//                        )
+//
+//                        Spacer(modifier = Modifier.height(30.dp))
+//
+//                        OtpView(
+//                            value = otpText,
+//                            digits = 6,
+//                            textColor = Orange,
+//                            passiveColor = Color.White.copy(alpha = 0.8f),
+//                            fontSize = 25.sp,
+//                            onFocusChanged = { focused ->
+//                                Log.i("focues = ", "$focused")
+//                            },
+//                            onTextChange = { value, completed ->
+//                                otpText = value
+//                            },
+//                        )
+//
+//                        Spacer(modifier = Modifier.height(180.dp))
+//
+//                        Text(
+//                            text = buildAnnotatedString {
+//                                append("Didn't receive a Otp?")
+//                                withStyle(
+//                                    style = SpanStyle(
+//                                        textDecoration = TextDecoration.Underline,
+//                                    )
+//                                ) {
+//                                    append("Resend Otp")
+//                                }
+//                            },
+//                            fontSize = 16.sp,
+//                            fontWeight = FontWeight.Normal,
+//                            color = Color.White
+//                        )
+//                    }
                 }
             }
         }
@@ -120,61 +120,61 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun OtpViewPreview() {
     OtpviewTheme {
-        Column(
-            modifier = Modifier
-                .padding(20.dp)
-                .background(Color.White)
-        ) {
-            OtpView(
-                value = "",
-                digits = 6,
-                onFocusChanged = { _ -> },
-                onTextChange = { _, _ -> },
-            )
-
-            Spacer(modifier = Modifier.height(30.dp))
-
-
-            OtpView(
-                value = "123",
-                digits = 4,
-                onFocusChanged = { _ -> },
-                onTextChange = { _, _ -> },
-            )
-
-            Spacer(modifier = Modifier.height(30.dp))
-
-
-            OtpView(
-                value = "123",
-                digits = 4,
-                fontSize = 32.sp,
-                onFocusChanged = { _ -> },
-                onTextChange = { _, _ -> },
-            )
-
-            Spacer(modifier = Modifier.height(30.dp))
-
-
-            OtpView(
-                value = "1234",
-                digits = 6,
-                textColor = Color.Blue,
-                onFocusChanged = { _ -> },
-                onTextChange = { _, _ -> },
-            )
-
-            Spacer(modifier = Modifier.height(30.dp))
-
-            OtpView(
-                value = "1234",
-                digits = 6,
-                textColor = Color.White,
-                activeColor = Color.Blue,
-                passiveColor = Color.Cyan,
-                onFocusChanged = { _ -> },
-                onTextChange = { _, _ -> },
-            )
-        }
+//        Column(
+//            modifier = Modifier
+//                .padding(20.dp)
+//                .background(Color.White)
+//        ) {
+//            OtpView(
+//                value = "",
+//                digits = 6,
+//                onFocusChanged = { _ -> },
+//                onTextChange = { _, _ -> },
+//            )
+//
+//            Spacer(modifier = Modifier.height(30.dp))
+//
+//
+//            OtpView(
+//                value = "123",
+//                digits = 4,
+//                onFocusChanged = { _ -> },
+//                onTextChange = { _, _ -> },
+//            )
+//
+//            Spacer(modifier = Modifier.height(30.dp))
+//
+//
+//            OtpView(
+//                value = "123",
+//                digits = 4,
+//                fontSize = 32.sp,
+//                onFocusChanged = { _ -> },
+//                onTextChange = { _, _ -> },
+//            )
+//
+//            Spacer(modifier = Modifier.height(30.dp))
+//
+//
+//            OtpView(
+//                value = "1234",
+//                digits = 6,
+//                textColor = Color.Blue,
+//                onFocusChanged = { _ -> },
+//                onTextChange = { _, _ -> },
+//            )
+//
+//            Spacer(modifier = Modifier.height(30.dp))
+//
+//            OtpView(
+//                value = "1234",
+//                digits = 6,
+//                textColor = Color.White,
+//                activeColor = Color.Blue,
+//                passiveColor = Color.Cyan,
+//                onFocusChanged = { _ -> },
+//                onTextChange = { _, _ -> },
+//            )
+//        }
     }
 }
