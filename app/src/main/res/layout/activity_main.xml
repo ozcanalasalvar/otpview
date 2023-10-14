@@ -15,7 +15,7 @@
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="30dp" />-->
 
-<!--    <com.ozcanalasalvar.pinview.view.OtpView-->
+<!--    <com.ozcanalasalvar.otp_view.view.OtpView-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        app:activeColor="@color/white"-->
@@ -30,7 +30,7 @@
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="30dp" />-->
 
-<!--    <com.ozcanalasalvar.pinview.view.OtpView-->
+<!--    <com.ozcanalasalvar.otp_view.view.OtpView-->
 <!--        android:id="@+id/otpView"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content" />-->
@@ -40,7 +40,7 @@
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="30dp" />-->
 
-<!--    <com.ozcanalasalvar.pinview.view.OtpView-->
+<!--    <com.ozcanalasalvar.otp_view.view.OtpView-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        app:activeColor="@color/white"-->
@@ -54,7 +54,7 @@
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="30dp" />-->
 
-<!--    <com.ozcanalasalvar.pinview.view.OtpView-->
+<!--    <com.ozcanalasalvar.otp_view.view.OtpView-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        app:activeColor="@color/blue_dark"-->
@@ -69,7 +69,7 @@
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="30dp" />-->
 
-<!--    <com.ozcanalasalvar.pinview.view.OtpView-->
+<!--    <com.ozcanalasalvar.otp_view.view.OtpView-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        app:activeColor="@color/teal_700"-->
@@ -83,7 +83,7 @@
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="30dp" />-->
 
-<!--    <com.ozcanalasalvar.pinview.view.OtpView-->
+<!--    <com.ozcanalasalvar.otp_view.view.OtpView-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        app:activeColor="@color/white"-->

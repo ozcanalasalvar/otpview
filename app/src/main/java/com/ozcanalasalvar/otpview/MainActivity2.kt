@@ -4,7 +4,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-//import com.ozcanalasalvar.otpview.view.OtpView
+//import com.ozcanalasalvar.otp_view.view.OtpView
 
 
 class MainActivity2 : AppCompatActivity() {

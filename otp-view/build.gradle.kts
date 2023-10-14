@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ozcanalasalvar.otpview"
+    namespace = "com.ozcanalasalvar.otp_view"
     compileSdk = 33
 
     defaultConfig {
@@ -47,7 +47,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.ozcanalasalvar"
             artifactId = "otpview"
-            version = "1.0.6"
+            version = "1.0.7"
 
         }
     }
