@@ -110,18 +110,13 @@ class OtpView : FrameLayout {
     }
 
 
-    fun setTextSize(textSize: Float) {
-        this.fontSize = textSize
+    fun setTextSize(textSize: Int) {
+        this.fontSize = textSize.toFloat()
         refresh()
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun setTextColor(color: android.graphics.Color) {
-        this.textColor = Color(
-            red = color.red(),
-            green = color.blue(),
-            blue = color.green(),
-        )
+    fun setTextColor(color: Int) {
+        this.textColor = Color(color)
         refresh()
     }
 
@@ -130,23 +125,14 @@ class OtpView : FrameLayout {
         refresh()
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun setActiveColor(activeColor: android.graphics.Color) {
-        this.activeColor = Color(
-            red = activeColor.red(),
-            green = activeColor.blue(),
-            blue = activeColor.green(),
-        )
+
+    fun setActiveColor(color: Int) {
+        this.activeColor = Color(color)
         refresh()
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun setPassiveColor(passiveColor: android.graphics.Color) {
-        this.passiveColor = Color(
-            red = passiveColor.red(),
-            green = passiveColor.blue(),
-            blue = passiveColor.green(),
-        )
+    fun setPassiveColor(color: Int) {
+        this.passiveColor =Color(color)
         refresh()
     }
 
@@ -171,7 +157,7 @@ class OtpView : FrameLayout {
     }
 
     private var textChangeListener: ChangeListener? = null
-    fun setDataSelectListener(dataSelectListener: ChangeListener) {
+    fun setTextChangeListener(dataSelectListener: ChangeListener) {
         this.textChangeListener = dataSelectListener
         refresh()
     }

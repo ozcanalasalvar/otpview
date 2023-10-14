@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="20dp"
+    tools:context=".MainActivity2">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <com.ozcanalasalvar.pinview.view.OtpView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:activeColor="@color/white"
+        app:autoFocusEnabled="false"
+        app:digits="6"
+        app:passiveColor="@color/gray"
+        app:textColor="@color/black"
+        app:textSize="22" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <com.ozcanalasalvar.pinview.view.OtpView
+        android:id="@+id/otpView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <com.ozcanalasalvar.pinview.view.OtpView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:activeColor="@color/white"
+        app:autoFocusEnabled="false"
+        app:digits="6"
+        app:passiveColor="@color/gray"
+        app:textColor="@color/orange"
+        app:textSize="22" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <com.ozcanalasalvar.pinview.view.OtpView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:activeColor="@color/blue_dark"
+        app:autoFocusEnabled="false"
+        app:digits="6"
+        app:passiveColor="@color/blue_light"
+        app:textColor="@color/white"
+        app:textSize="22" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <com.ozcanalasalvar.pinview.view.OtpView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:activeColor="@color/teal_700"
+        app:autoFocusEnabled="false"
+        app:digits="4"
+        app:passiveColor="@color/teal_200"
+        app:textColor="@color/white"
+        app:textSize="30" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <com.ozcanalasalvar.pinview.view.OtpView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:activeColor="@color/white"
+        app:autoFocusEnabled="false"
+        app:digits="4"
+        app:passiveColor="@color/gray"
+        app:textColor="@color/purple_700"
+        app:textSize="30" />
+
+</LinearLayout>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.Otpview" parent="Theme.AppCompat.Light.NoActionBar"/>
+    <style name="Theme.Otpview" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 </resources>
