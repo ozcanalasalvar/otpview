@@ -1,5 +1,3 @@
-import io.grpc.internal.SharedResourceHolder.release
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -7,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ozcanalasalvar.pinview"
+    namespace = "com.ozcanalasalvar.otpview"
     compileSdk = 33
 
     defaultConfig {
@@ -53,9 +51,9 @@ publishing {
         create<MavenPublication>("release") {
             groupId = "com.ozcanalasalvar"
             artifactId = "otpview"
-            version = "1.0.1"
+            version = "1.0.2"
 
-            artifact("$buildDir/outputs/aar/pinview-release.aar")
+            artifact("$buildDir/outputs/aar/otpview-release.aar")
         }
     }
 

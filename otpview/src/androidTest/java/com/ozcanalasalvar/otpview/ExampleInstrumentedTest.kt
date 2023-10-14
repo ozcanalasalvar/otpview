@@ -1,4 +1,4 @@
-package com.ozcanalasalvar.pinview
+package com.ozcanalasalvar.otpview
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

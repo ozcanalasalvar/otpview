@@ -1,4 +1,4 @@
-package com.ozcanalasalvar.pinview.style
+package com.ozcanalasalvar.otpview.style
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
