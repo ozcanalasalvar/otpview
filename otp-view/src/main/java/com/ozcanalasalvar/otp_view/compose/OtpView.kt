@@ -1,4 +1,4 @@
-package com.ozcanalasalvar.pinview.compose
+package com.ozcanalasalvar.otp_view.compose
 
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -9,10 +9,10 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
-import com.ozcanalasalvar.pinview.style.ColorStyle
-import com.ozcanalasalvar.pinview.style.ColorStyle.Companion.merge
-import com.ozcanalasalvar.pinview.style.Defaults
-import com.ozcanalasalvar.pinview.style.takeOrElse
+import com.ozcanalasalvar.otp_view.style.ColorStyle
+import com.ozcanalasalvar.otp_view.style.ColorStyle.Companion.merge
+import com.ozcanalasalvar.otp_view.style.Defaults
+import com.ozcanalasalvar.otp_view.style.takeOrElse
 
 @Composable
 fun OtpView(

@@ -1,4 +1,4 @@
-package com.ozcanalasalvar.pinview.view
+package com.ozcanalasalvar.otp_view.view
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import android.widget.FrameLayout
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
-import com.ozcanalasalvar.otpview.R
+import com.ozcanalasalvar.otp_view.R
 
 class OtpView : FrameLayout {
 

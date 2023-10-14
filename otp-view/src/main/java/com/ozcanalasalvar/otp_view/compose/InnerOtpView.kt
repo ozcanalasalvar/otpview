@@ -1,4 +1,4 @@
-package com.ozcanalasalvar.pinview.compose
+package com.ozcanalasalvar.otp_view.compose
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -32,8 +32,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.text.isDigitsOnly
-import com.ozcanalasalvar.pinview.style.ColorStyle
-import com.ozcanalasalvar.pinview.style.Defaults
+import com.ozcanalasalvar.otp_view.style.ColorStyle
+import com.ozcanalasalvar.otp_view.style.Defaults
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
