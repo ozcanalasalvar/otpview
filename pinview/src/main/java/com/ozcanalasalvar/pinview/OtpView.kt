@@ -1,29 +1,18 @@
 package com.ozcanalasalvar.pinview
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.BasicTextField
-import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.Text
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.focus.focusRequester
-import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
-import androidx.core.text.isDigitsOnly
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import com.ozcanalasalvar.pinview.style.ColorStyle
+import com.ozcanalasalvar.pinview.style.ColorStyle.Companion.merge
+import com.ozcanalasalvar.pinview.style.Defaults
+import com.ozcanalasalvar.pinview.style.takeOrElse
 
 @Composable
 fun OtpView(
@@ -32,100 +21,55 @@ fun OtpView(
     digits: Int = 6,
     enabled: Boolean = true,
     errorEnabled: Boolean = false,
-    autoFocusEnabled: Boolean = false,
+    errorColor: Color? = null,
+    autoFocusEnabled: Boolean = true,
+    textColor: Color? = null,
+    fontSize: TextUnit = 22.sp,
+    fontStyle: FontStyle? = null,
+    fontWeight: FontWeight? = null,
+    fontFamily: FontFamily? = null,
+    textStyle: TextStyle = Defaults.textStyle,
+    activeColor: Color? = null,
+    passiveColor: Color? = null,
+    colorStyle: ColorStyle = ColorStyle.Default,
     onFocusChanged: (Boolean) -> Unit = {},
     onTextChange: (String, Boolean) -> Unit,
 ) {
-    val focusRequester = remember { FocusRequester() }
-    var isFocused by remember { mutableStateOf(false) }
-    BasicTextField(
-        modifier = modifier
-            .onFocusChanged {
-                isFocused = it.isFocused
-                onFocusChanged(it.isFocused)
-            }
-            .focusRequester(focusRequester),
-        value = value,
-        singleLine = true,
-        onValueChange = {
-            if (it.length <= digits && it.isDigitsOnly()) {
-                onTextChange.invoke(it, it.length == digits)
-                onFocusChanged(true)
-            }
-        },
-        enabled = enabled,
-        textStyle = TextStyle(textAlign = TextAlign.Center),
-        keyboardOptions = KeyboardOptions(
-            keyboardType =
-            KeyboardType.Number
-        ),
-        decorationBox = { innerTextField ->
-            Row(Modifier.width(IntrinsicSize.Min)) {
-                val textLength = value.length
-                repeat(digits) { index ->
-                    Box(
-                        modifier = Modifier
-                            .size(width = 48.dp, height = 48.dp)
-                            .background(
-                                if (index < textLength && value[index]
-                                        .toString()
-                                        .isNotEmpty()
-                                ) Color.White else Color.LightGray/*SmsCodeBg*/, shape =
-                                RoundedCornerShape(5.dp)
-                            )
-                            .border(
-                                width = 1.dp,
-                                color = if (errorEnabled) Color.Red else (if (index <
-                                    textLength && value[index]
-                                        .toString()
-                                        .isNotEmpty()
-                                ) Color.Black else Color.LightGray/*SmsCodeBg*/),
-                                shape = RoundedCornerShape(5.dp)
-                            )
-                            .padding(1.dp),
-                        contentAlignment = Alignment.Center,
-                    ) {
-                        Text(
-                            text = if (index < textLength) value[index].toString() else "",
-                            modifier = Modifier.align(
-                                Alignment.Center
-                            ),
-                            fontSize = 22.sp,
-                            style = TextStyle()
-                            //fontFamily = FontFamily(Font(R.font.medium)),
-                        )
-                        if (index == textLength && isFocused) {
-                            var alpha by remember { mutableStateOf(1f) }
-                            LaunchedEffect(key1 = Unit) {
-                                coroutineScope {
-                                    launch {
-                                        while (true) {
-                                            delay(750L)
-                                            alpha = 1f - alpha
-                                        }
-                                    }
-                                }
-                            }
-                            Box(
-                                modifier = Modifier
-                                    .width(2.dp)
-                                    .height(20.dp)
-                                    .alpha(alpha)
-                                    .background(Color.Black)
-                            )
-                        }
-                    }
-                    if (index != digits - 1) Spacer(modifier = Modifier.width(8.dp))
-                }
-            }
-        },
+
+    val textFieldColor = textColor.takeOrElse { textStyle.color }
+
+    val mergedStyle = textStyle.merge(
+        TextStyle(
+            color = textFieldColor,
+            fontSize = fontSize,
+            fontWeight = fontWeight,
+            fontFamily = fontFamily,
+            fontStyle = fontStyle,
+        )
     )
-    LaunchedEffect(autoFocusEnabled) {
-        if (autoFocusEnabled)
-            focusRequester.requestFocus()
-    }
+
+    val active = activeColor.takeOrElse { colorStyle.active }
+    val passive = passiveColor.takeOrElse { colorStyle.passive }
+    val error = errorColor.takeOrElse { colorStyle.error }
+
+    val mergedColorStyle = colorStyle.merge(
+        ColorStyle(
+            activeColor = active, passiveColor = passive, errorColor = error
+        )
+    )
+
+
+    InnerOtpView(
+        modifier = modifier,
+        value = value,
+        digits = digits,
+        enabled = enabled,
+        errorEnabled = errorEnabled,
+        autoFocusEnabled = autoFocusEnabled,
+        colorStyle = mergedColorStyle,
+        textStyle = mergedStyle,
+        onFocusChanged = onFocusChanged,
+        onTextChange = onTextChange,
+    )
+
 }
-
-data class OtpViewColorPallet(
-
-)
