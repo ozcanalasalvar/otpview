@@ -40,22 +40,26 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
 }
 
 publishing {
+
     publications {
+        create<MavenPublication>("release") {
+            groupId = "com.ozcanalasalvar"
+            artifactId = "otpview"
+            version = "1.0.1"
 
-        publications {
-            create<MavenPublication>("release") {
-                groupId = "com.ozcanalasalvar"
-                artifactId = "otpview"
-                version = "1.0.0"
-
-                artifact("$buildDir/outputs/aar/datepicker-release.aar")
-            }
+            artifact("$buildDir/outputs/aar/pinview-release.aar")
         }
-
     }
+
+
 }
 
 dependencies {
