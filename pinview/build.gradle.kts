@@ -46,10 +46,10 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = "com.ozcanalasalvar"
-            artifactId = "otp-view"
+            artifactId = "pinview"
             version = "1.0.7-alpha02"
 
-            artifact("$buildDir/outputs/aar/otpview-release.aar")
+            artifact("$buildDir/outputs/aar/pinview-release.aar")
         }
     }
 
