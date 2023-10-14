@@ -44,12 +44,11 @@ android {
 publishing {
 
     publications {
-        create<MavenPublication>("release") {
+        create<MavenPublication>("maven") {
             groupId = "com.ozcanalasalvar"
             artifactId = "otpview"
-            version = "1.0.5-alpha02"
+            version = "1.0.5-alpha04"
 
-            artifact("$buildDir/outputs/aar/otpview-release.aar")
         }
     }
 
