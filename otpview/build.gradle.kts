@@ -1,7 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    `maven-publish`
+    id("maven-publish")
 }
 
 android {
@@ -51,7 +51,7 @@ publishing {
         create<MavenPublication>("release") {
             groupId = "com.ozcanalasalvar"
             artifactId = "otpview"
-            version = "1.0.4"
+            version = "1.0.5"
 
             artifact("$buildDir/outputs/aar/otpview-release.aar")
         }
