@@ -1,4 +1,4 @@
-package com.ozcanalasalvar.pinview
+package com.ozcanalasalvar.pinview.compose
 
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier

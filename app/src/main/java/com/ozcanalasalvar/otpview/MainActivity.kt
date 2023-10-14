@@ -24,7 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ozcanalasalvar.otpview.ui.theme.OtpviewTheme
-import com.ozcanalasalvar.pinview.OtpView
+import com.ozcanalasalvar.pinview.compose.OtpView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

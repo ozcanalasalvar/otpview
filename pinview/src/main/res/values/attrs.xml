@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="OtpView">
+        <attr name="activeColor" format="reference|color" />
+        <attr name="passiveColor" format="reference|color" />
+        <attr name="textColor" format="reference|color" />
+        <attr name="autoFocusEnabled" format="boolean" />
+        <attr name="digits" format="integer" />
+        <attr name="textSize" format="integer" />
+        <attr name="fontFamily" format="string" />
+    </declare-styleable>
+
+</resources>
