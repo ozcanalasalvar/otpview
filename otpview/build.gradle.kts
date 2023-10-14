@@ -38,11 +38,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
     }
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-        }
-    }
+
 }
 
 publishing {
@@ -51,7 +47,7 @@ publishing {
         create<MavenPublication>("release") {
             groupId = "com.ozcanalasalvar"
             artifactId = "otpview"
-            version = "1.0.5"
+            version = "1.0.5-alpha01"
 
             artifact("$buildDir/outputs/aar/otpview-release.aar")
         }
