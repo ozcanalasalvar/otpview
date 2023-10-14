@@ -47,7 +47,7 @@ publishing {
         create<MavenPublication>("release") {
             groupId = "com.ozcanalasalvar"
             artifactId = "otpview"
-            version = "1.0.5-alpha01"
+            version = "1.0.5-alpha02"
 
             artifact("$buildDir/outputs/aar/otpview-release.aar")
         }
