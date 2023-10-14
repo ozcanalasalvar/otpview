@@ -1,6 +1,9 @@
+import io.grpc.internal.SharedResourceHolder.release
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    `maven-publish`
 }
 
 android {
@@ -18,8 +21,7 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -32,11 +34,27 @@ android {
     }
 
     buildFeatures {
-        compose  = true
+        compose = true
     }
 
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
+    }
+}
+
+publishing {
+    publications {
+
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.ozcanalasalvar"
+                artifactId = "otpview"
+                version = "1.0.0"
+
+                artifact("$buildDir/outputs/aar/datepicker-release.aar")
+            }
+        }
+
     }
 }
 
