@@ -1,4 +1,4 @@
-package com.ozcanalasalvar.otpview.view
+package com.ozcanalasalvar.pinview.view
 
 import android.content.Context
 import android.util.AttributeSet
@@ -14,8 +14,8 @@ import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.ozcanalasalvar.otpview.compose.OtpView
-import com.ozcanalasalvar.otpview.style.Defaults
+import com.ozcanalasalvar.pinview.compose.OtpView
+import com.ozcanalasalvar.pinview.style.Defaults
 
 class OptViewComposeView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyle: Int = 0

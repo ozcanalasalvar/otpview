@@ -65,4 +65,5 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
 //    implementation(project(path = ":otpview"))
+    //implementation("com.github.ozcanalasalvar.otpview:otpview:1.0.6")
 }

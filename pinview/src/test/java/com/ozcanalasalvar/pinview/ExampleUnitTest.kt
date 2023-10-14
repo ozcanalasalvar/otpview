@@ -1,4 +1,4 @@
-package com.ozcanalasalvar.otpview
+package com.ozcanalasalvar.pinview
 
 import org.junit.Test
 

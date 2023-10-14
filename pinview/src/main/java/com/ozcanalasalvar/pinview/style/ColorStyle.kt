@@ -1,4 +1,4 @@
-package com.ozcanalasalvar.otpview.style
+package com.ozcanalasalvar.pinview.style
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.Stable

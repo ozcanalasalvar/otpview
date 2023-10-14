@@ -1,4 +1,4 @@
-package com.ozcanalasalvar.otpview.view
+package com.ozcanalasalvar.pinview.view
 
 import android.annotation.SuppressLint
 import android.content.Context
