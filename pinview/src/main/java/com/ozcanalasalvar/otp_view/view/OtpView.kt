@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import android.widget.FrameLayout
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
-import com.ozcanalasalvar.otp_view.R
+import com.ozcanalasalvar.pinview.R
 
 class OtpView : FrameLayout {
 
