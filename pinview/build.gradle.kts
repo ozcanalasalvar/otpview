@@ -52,13 +52,13 @@ publishing {
     publications {
         register<MavenPublication>("release"){
             groupId = "com.ozcanalasalvar"
-            artifactId = "otpview"
-            version = "1.0.8-alpha01"
+            artifactId = "pinview"
+            version = "1.0.8-alpha02"
 
             afterEvaluate {
                 from(components["release"])
             }
-            artifact("$buildDir/outputs/aar/pinview-release.aar")
+            //artifact("$buildDir/outputs/aar/pinview-release.aar")
         }
     }
 
