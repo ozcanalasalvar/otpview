@@ -9,7 +9,7 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        minSdk = 21
+        minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -47,7 +47,7 @@ publishing {
         register<MavenPublication>("release"){
             groupId = "com.ozcanalasalvar"
             artifactId = "pinview"
-            version = "1.0.8-alpha03"
+            version = "1.0.8"
 
             artifact("$buildDir/outputs/aar/pinview-release.aar")
         }
