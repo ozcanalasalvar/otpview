@@ -39,15 +39,21 @@ android {
         kotlinCompilerExtensionVersion = "1.4.3"
     }
 
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 publishing {
 
     publications {
-        create<MavenPublication>("release") {
+        create<MavenPublication>("maven") {
             groupId = "com.ozcanalasalvar"
             artifactId = "pinview"
-            version = "1.0.7-alpha08"
+            version = "1.0.7-alpha09"
 
             artifact("$buildDir/outputs/aar/pinview-release.aar")
         }
