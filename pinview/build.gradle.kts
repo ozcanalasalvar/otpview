@@ -1,11 +1,11 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("maven-publish")
+    `maven-publish`
 }
 
 android {
-    namespace = "com.ozcanalasalvar.otp_view"
+    namespace = "com.ozcanalasalvar.pinview"
     compileSdk = 33
 
     defaultConfig {
@@ -47,7 +47,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.ozcanalasalvar"
             artifactId = "pinview"
-            version = "1.0.7-alpha02"
+            version = "1.0.7-alpha03"
 
             artifact("$buildDir/outputs/aar/pinview-release.aar")
         }
