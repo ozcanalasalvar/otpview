@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.ozcanalasalvar.otpview"
-        minSdk = 21
+        minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -65,5 +65,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
 //    implementation(project(path = "::otp-view"))
-    //implementation("com.github.ozcanalasalvar.otpview:otpview:1.0.6")
+    implementation("com.github.ozcanalasalvar:otpview:1.0.8")
+
 }
