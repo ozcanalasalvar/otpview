@@ -16,4 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "otpview"
 include(":app")
-include(":otp-view")
+include(":pinview")
