@@ -50,11 +50,14 @@ android {
 publishing {
 
     publications {
-        create<MavenPublication>("maven") {
+        register<MavenPublication>("release"){
             groupId = "com.ozcanalasalvar"
-            artifactId = "pinview"
-            version = "1.0.7-alpha09"
+            artifactId = "otpview"
+            version = "1.0.8-alpha01"
 
+            afterEvaluate {
+                from(components["release"])
+            }
             artifact("$buildDir/outputs/aar/pinview-release.aar")
         }
     }
