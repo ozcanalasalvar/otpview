@@ -39,6 +39,13 @@ android {
         kotlinCompilerExtensionVersion = "1.4.3"
     }
 
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
 }
 
 publishing {
@@ -49,7 +56,9 @@ publishing {
             artifactId = "pinview"
             version = "1.0.8"
 
-            artifact("$buildDir/outputs/aar/pinview-release.aar")
+            afterEvaluate {
+                from(components["release"])
+            }
         }
     }
 
