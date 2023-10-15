@@ -47,7 +47,7 @@ publishing {
         create<MavenPublication>("release") {
             groupId = "com.ozcanalasalvar"
             artifactId = "pinview"
-            version = "1.0.7-alpha07"
+            version = "1.0.7-alpha08"
 
             artifact("$buildDir/outputs/aar/pinview-release.aar")
         }
