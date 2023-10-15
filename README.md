@@ -13,7 +13,7 @@
 <br>
 
 
-# Jetpack Compose Usage
+## Jetpack Compose Usage
 
 <br>
 
@@ -35,7 +35,7 @@ OtpView(
 <br>
 <br>
 
-# View Usage
+## View Usage
 
 ```java
 val optView = findViewById<OtpView>(R.id.otpView)
@@ -74,7 +74,7 @@ optView.apply {
 <br>
 <br>
 
-# Implementation Gradle
+## Implementation Gradle
 
 ###### Add it in your root build.gradle at the end of repositories:
 
