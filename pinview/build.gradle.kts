@@ -9,7 +9,7 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 21
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -39,12 +39,6 @@ android {
         kotlinCompilerExtensionVersion = "1.4.3"
     }
 
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
 }
 
 publishing {
@@ -53,12 +47,9 @@ publishing {
         register<MavenPublication>("release"){
             groupId = "com.ozcanalasalvar"
             artifactId = "pinview"
-            version = "1.0.8-alpha02"
+            version = "1.0.8-alpha03"
 
-            afterEvaluate {
-                from(components["release"])
-            }
-            //artifact("$buildDir/outputs/aar/pinview-release.aar")
+            artifact("$buildDir/outputs/aar/pinview-release.aar")
         }
     }
 

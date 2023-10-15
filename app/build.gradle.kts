@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.ozcanalasalvar.otpview"
-        minSdk = 24
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
