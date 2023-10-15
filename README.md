@@ -4,9 +4,9 @@
 <br>
 
 <p align="start">
-  <img src="https://github.com/ozcanalasalvar/otpview/blob/main/art/Screenshot_20231014_225243.png" width="350">
+  <img src="https://github.com/ozcanalasalvar/otpview/blob/main/art/Screenshot_20231014_225243.png" width="300">
 	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/ozcanalasalvar/otpview/blob/main/art/Screenshot_20231014_222403.png" width="350">
+  <img src="https://github.com/ozcanalasalvar/otpview/blob/main/art/Screenshot_20231014_222403.png" width="300">
 </p>
 
 <br>
