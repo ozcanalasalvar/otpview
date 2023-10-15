@@ -92,7 +92,7 @@ dependencyResolutionManagement {
 
 ```groovy
 dependencies {
-	 implementation("com.github.ozcanalasalvar:otpview:1.0.8")
+	 implementation("com.github.ozcanalasalvar:otpview:1.0.9")
 
 	//For view based UI's
 	implementation 'androidx.compose.material3:material3:Tag'
