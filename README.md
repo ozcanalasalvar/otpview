@@ -31,6 +31,8 @@ OtpView(
   fontStyle = FontStyle.Italic,
   fontWeight = FontWeight.Bold,
   fontFamily = FontFamily(),
+  password = false,
+  keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
   onTextChange = { _, _ -> },
 )
 ```
@@ -66,13 +68,17 @@ optView.apply {
 <com.ozcanalasalvar.otp_view.view.OtpView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:activeColor="@color/white"
-        app:autoFocusEnabled="false"
         app:digits="6"
+	app:keyboardType="number"
+        app:password="true"
+        app:otpSymbol="*"
+ 	app:activeColor="@color/white"
+        app:autoFocusEnabled="false"
         app:passiveColor="@color/gray"
         app:textColor="@color/orange"
         app:textSize="22"
-        app:fontFamily="@font/your_custom_font"/>
+        app:fontFamily="@font/your_custom_font"
+ 	/>
 ```
 <br>
 <br>
@@ -95,7 +101,7 @@ dependencyResolutionManagement {
 
 ```groovy
 dependencies {
-	 implementation("com.github.ozcanalasalvar:otpview:1.0.9")
+	 implementation("com.github.ozcanalasalvar:otpview:2.0.1")
 
 	//For view based UI's
 	implementation 'androidx.compose.material3:material3:Tag'
