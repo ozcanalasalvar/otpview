@@ -54,7 +54,7 @@ publishing {
         register<MavenPublication>("release"){
             groupId = "com.ozcanalasalvar"
             artifactId = "pinview"
-            version = "2.0.0"
+            version = "2.0.1"
 
             afterEvaluate {
                 from(components["release"])

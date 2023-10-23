@@ -34,7 +34,6 @@ import androidx.compose.ui.unit.dp
 import androidx.core.text.isDigitsOnly
 import com.ozcanalasalvar.otp_view.style.ColorStyle
 import com.ozcanalasalvar.otp_view.style.Defaults
-import com.ozcanalasalvar.otp_view.style.OtpType
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -44,13 +43,14 @@ fun InnerOtpView(
     modifier: Modifier = Modifier,
     value: String,
     digits: Int = 6,
-    otpType: Int = OtpType.TEXT,
+    password: Boolean,
     symbol: Char = '*',
     enabled: Boolean = true,
     errorEnabled: Boolean = false,
     autoFocusEnabled: Boolean = false,
     colorStyle: ColorStyle = ColorStyle.Default,
     textStyle: TextStyle = Defaults.textStyle,
+    keyboardOptions: KeyboardOptions,
     onFocusChanged: (Boolean) -> Unit = {},
     onTextChange: (String, Boolean) -> Unit,
 ) {
@@ -73,16 +73,18 @@ fun InnerOtpView(
         value = value,
         singleLine = true,
         onValueChange = {
-            if (it.length <= currentDigitCount && it.isDigitsOnly()) {
-                onTextChange.invoke(it, it.length == currentDigitCount)
-                onFocusChanged(true)
+            if (it.length <= currentDigitCount) {
+                if ((keyboardOptions.keyboardType == KeyboardType.Number && it.isDigitsOnly()) ||
+                    keyboardOptions.keyboardType == KeyboardType.Text
+                ) {
+                    onTextChange.invoke(it, it.length == currentDigitCount)
+                    onFocusChanged(true)
+                }
             }
         },
         enabled = enabled,
         textStyle = TextStyle(textAlign = TextAlign.Center),
-        keyboardOptions = KeyboardOptions(
-            keyboardType = KeyboardType.Number
-        ),
+        keyboardOptions = keyboardOptions,
         decorationBox = { innerTextField ->
             Row(Modifier.width(IntrinsicSize.Min)) {
                 val textLength = value.length
@@ -111,7 +113,7 @@ fun InnerOtpView(
                     ) {
                         Text(
                             text = if (index < textLength) {
-                                if (otpType == OtpType.PASSWORD) {
+                                if (password) {
                                     symbol.toString()
                                 } else {
                                     value[index].toString()

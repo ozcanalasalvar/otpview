@@ -3,6 +3,7 @@ package com.ozcanalasalvar.otp_view.view
 import android.content.Context
 import android.util.AttributeSet
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -13,6 +14,7 @@ import androidx.compose.ui.platform.AbstractComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.sp
 import com.ozcanalasalvar.otp_view.compose.OtpView
 import com.ozcanalasalvar.otp_view.style.Defaults
@@ -30,6 +32,10 @@ class OptViewComposeView @JvmOverloads constructor(
     private val digitsState = mutableStateOf(Defaults.digits)
     private val errorEnabledState = mutableStateOf(false)
     private val autoFocusEnabledState = mutableStateOf(true)
+    private val passwordState = mutableStateOf(false)
+    private val symbolState = mutableStateOf('*')
+    private val keyboardTypeState =
+        mutableStateOf<KeyboardOptions>(KeyboardOptions(keyboardType = KeyboardType.Number))
 
 
     var fontSize: Float?
@@ -86,6 +92,24 @@ class OptViewComposeView @JvmOverloads constructor(
             autoFocusEnabledState.value = value
         }
 
+    var password: Boolean
+        get() = passwordState.value
+        set(value) {
+            passwordState.value = value
+        }
+
+    var symbol: Char
+        get() = symbolState.value
+        set(value) {
+            symbolState.value = value
+        }
+
+    var keyboardType: KeyboardOptions
+        get() = keyboardTypeState.value
+        set(value) {
+            keyboardTypeState.value = value
+        }
+
 
     private var textChangeListener: OtpView.ChangeListener? = null
     fun setTextChangeListener(dataSelectListener: OtpView.ChangeListener?) {
@@ -105,6 +129,8 @@ class OptViewComposeView @JvmOverloads constructor(
             OtpView(
                 value = otpText,
                 digits = digitsState.value,
+                password = passwordState.value,
+                symbol = symbolState.value,
                 errorEnabled = errorEnabledState.value,
                 autoFocusEnabled = autoFocusEnabledState.value,
                 textColor = textColorState.value,
@@ -113,6 +139,7 @@ class OptViewComposeView @JvmOverloads constructor(
                 fontFamily = fontFamilyState.value,
                 activeColor = activeColorState.value,
                 passiveColor = passiveColorState.value,
+                keyboardOptions = keyboardTypeState.value,
                 onTextChange = { value, completed ->
                     otpText = value
 
