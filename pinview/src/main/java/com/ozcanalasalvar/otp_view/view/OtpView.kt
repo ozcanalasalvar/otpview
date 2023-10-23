@@ -4,8 +4,10 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.FrameLayout
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
+import com.ozcanalasalvar.otp_view.style.KeyboardType
 import com.ozcanalasalvar.pinview.R
 
 class OtpView : FrameLayout {
@@ -19,7 +21,10 @@ class OtpView : FrameLayout {
     private var passiveColor: Color? = null
     private var errorEnabled: Boolean = false
     private var autoFocusEnabled: Boolean = true
+    private var password: Boolean = false
+    private var symbol: Char = '*'
     private var digits: Int = 6
+    private var keyboardType: Int = 3
 
 
     constructor(context: Context) : super(context) {
@@ -76,6 +81,19 @@ class OtpView : FrameLayout {
                 R.styleable.OtpView_textColor -> {
                     textColor = Color(a.getColor(R.styleable.OtpView_textColor, -1))
                 }
+
+                R.styleable.OtpView_password -> {
+                    password = a.getBoolean(R.styleable.OtpView_password, false)
+                }
+
+                R.styleable.OtpView_otpSymbol -> {
+                    symbol =
+                        a.getString(R.styleable.OtpView_otpSymbol)?.toCharArray()?.get(0) ?: '*'
+                }
+
+                R.styleable.OtpView_keyboardType -> {
+                    keyboardType = a.getInt(R.styleable.OtpView_keyboardType, KeyboardType.NUMBER)
+                }
             }
         }
         a.recycle()
@@ -104,6 +122,21 @@ class OtpView : FrameLayout {
         otpView.errorEnabled = errorEnabled
         otpView.autoFocusEnabled = autoFocusEnabled
         otpView.digits = digits
+        otpView.password = password
+        otpView.symbol = symbol
+        otpView.keyboardType = when (keyboardType) {
+            KeyboardType.TEXT -> {
+                KeyboardOptions(keyboardType = androidx.compose.ui.text.input.KeyboardType.Text)
+            }
+
+            KeyboardType.NUMBER -> {
+                KeyboardOptions(keyboardType = androidx.compose.ui.text.input.KeyboardType.Number)
+            }
+
+            else -> {
+                KeyboardOptions(keyboardType = androidx.compose.ui.text.input.KeyboardType.Number)
+            }
+        }
         otpView.setTextChangeListener(textChangeListener)
     }
 
@@ -130,7 +163,7 @@ class OtpView : FrameLayout {
     }
 
     fun setPassiveColor(color: Int) {
-        this.passiveColor =Color(color)
+        this.passiveColor = Color(color)
         refresh()
     }
 

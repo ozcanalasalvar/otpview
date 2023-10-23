@@ -8,6 +8,13 @@
         <attr name="digits" format="integer" />
         <attr name="textSize" format="integer" />
         <attr name="fontFamily" format="string" />
+        <attr name="otpSymbol" format="string" />
+        <attr name="password" format="boolean"/>
+        <attr name="keyboardType" format="enum">
+            <enum name="text" value="1" />
+            ....
+            <enum name="number" value="0" />
+        </attr>
     </declare-styleable>
 
 </resources>

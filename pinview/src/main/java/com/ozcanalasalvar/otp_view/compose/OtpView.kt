@@ -1,5 +1,6 @@
 package com.ozcanalasalvar.otp_view.compose
 
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -7,12 +8,12 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import com.ozcanalasalvar.otp_view.style.ColorStyle
 import com.ozcanalasalvar.otp_view.style.ColorStyle.Companion.merge
 import com.ozcanalasalvar.otp_view.style.Defaults
-import com.ozcanalasalvar.otp_view.style.OtpType
 import com.ozcanalasalvar.otp_view.style.takeOrElse
 
 @Composable
@@ -20,8 +21,8 @@ fun OtpView(
     modifier: Modifier = Modifier,
     value: String,
     digits: Int = 6,
-    otpType: Int = OtpType.TEXT,
-    symbol:Char = '*',
+    password: Boolean = false,
+    symbol: Char = '*',
     enabled: Boolean = true,
     errorEnabled: Boolean = false,
     errorColor: Color? = null,
@@ -35,6 +36,7 @@ fun OtpView(
     activeColor: Color? = null,
     passiveColor: Color? = null,
     colorStyle: ColorStyle = ColorStyle.Default,
+    keyboardOptions: KeyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
     onFocusChanged: (Boolean) -> Unit = {},
     onTextChange: (String, Boolean) -> Unit,
 ) {
@@ -66,13 +68,14 @@ fun OtpView(
         modifier = modifier,
         value = value,
         digits = digits,
-        otpType=otpType,
-        symbol=symbol,
+        password = password,
+        symbol = symbol,
         enabled = enabled,
         errorEnabled = errorEnabled,
         autoFocusEnabled = autoFocusEnabled,
         colorStyle = mergedColorStyle,
         textStyle = mergedStyle,
+        keyboardOptions = keyboardOptions,
         onFocusChanged = onFocusChanged,
         onTextChange = onTextChange,
     )
