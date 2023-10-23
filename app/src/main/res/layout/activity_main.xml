@@ -21,7 +21,10 @@
         app:activeColor="@color/white"
         app:autoFocusEnabled="false"
         app:digits="6"
+        app:keyboardType="number"
+        app:otpSymbol="*"
         app:passiveColor="@color/gray"
+        app:password="false"
         app:textColor="@color/black"
         app:textSize="22" />
 
@@ -33,7 +36,8 @@
     <com.ozcanalasalvar.otp_view.view.OtpView
         android:id="@+id/otpView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:password="true" />
 
 
     <View
@@ -46,9 +50,10 @@
         app:activeColor="@color/white"
         app:autoFocusEnabled="false"
         app:digits="6"
+        app:fontFamily="@font/"
+        app:keyboardType="text"
         app:passiveColor="@color/gray"
         app:textColor="@color/orange"
-        app:fontFamily="@font/"
         app:textSize="22" />
 
     <View
