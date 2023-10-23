@@ -32,6 +32,7 @@ OtpView(
   fontWeight = FontWeight.Bold,
   fontFamily = FontFamily(),
   password = false,
+  symbol = '*',
   keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
   onTextChange = { _, _ -> },
 )
