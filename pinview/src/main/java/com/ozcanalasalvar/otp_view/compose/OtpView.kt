@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.sp
 import com.ozcanalasalvar.otp_view.style.ColorStyle
 import com.ozcanalasalvar.otp_view.style.ColorStyle.Companion.merge
 import com.ozcanalasalvar.otp_view.style.Defaults
+import com.ozcanalasalvar.otp_view.style.OtpType
 import com.ozcanalasalvar.otp_view.style.takeOrElse
 
 @Composable
@@ -19,6 +20,8 @@ fun OtpView(
     modifier: Modifier = Modifier,
     value: String,
     digits: Int = 6,
+    otpType: Int = OtpType.TEXT,
+    symbol:Char = '*',
     enabled: Boolean = true,
     errorEnabled: Boolean = false,
     errorColor: Color? = null,
@@ -63,6 +66,8 @@ fun OtpView(
         modifier = modifier,
         value = value,
         digits = digits,
+        otpType=otpType,
+        symbol=symbol,
         enabled = enabled,
         errorEnabled = errorEnabled,
         autoFocusEnabled = autoFocusEnabled,

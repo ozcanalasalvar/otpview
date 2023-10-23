@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.text.isDigitsOnly
 import com.ozcanalasalvar.otp_view.style.ColorStyle
 import com.ozcanalasalvar.otp_view.style.Defaults
+import com.ozcanalasalvar.otp_view.style.OtpType
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -43,6 +44,8 @@ fun InnerOtpView(
     modifier: Modifier = Modifier,
     value: String,
     digits: Int = 6,
+    otpType: Int = OtpType.TEXT,
+    symbol: Char = '*',
     enabled: Boolean = true,
     errorEnabled: Boolean = false,
     autoFocusEnabled: Boolean = false,
@@ -57,7 +60,7 @@ fun InnerOtpView(
 
     val screenWidth = LocalConfiguration.current.screenWidthDp
     val boxSize = textStyle.fontSize.value * 2 + 4
-    val maxDigit = (screenWidth / boxSize)-1
+    val maxDigit = (screenWidth / boxSize) - 1
     val currentDigitCount = minOf(digits, maxDigit.toInt())
 
     BasicTextField(
@@ -107,11 +110,15 @@ fun InnerOtpView(
                         contentAlignment = Alignment.Center,
                     ) {
                         Text(
-                            text = if (index < textLength) value[index].toString() else "",
-                            modifier = Modifier.align(
+                            text = if (index < textLength) {
+                                if (otpType == OtpType.PASSWORD) {
+                                    symbol.toString()
+                                } else {
+                                    value[index].toString()
+                                }
+                            } else "", modifier = Modifier.align(
                                 Alignment.Center
-                            ),
-                            style = textStyle
+                            ), style = textStyle
                         )
                         if (index == textLength && isFocused) {
                             var alpha by remember { mutableStateOf(1f) }
